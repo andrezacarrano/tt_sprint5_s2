@@ -12,6 +12,7 @@ def process_dataframe(dataframe):
         .str.replace(r'\(%\)', '', regex=True)
         .str.strip()
         .str.replace(' ', '_')
+        .str.replace('-', '_')
     )
     # remover dados nulos
     df = df.dropna()
