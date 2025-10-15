@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 
-def adjust_columns_names(dataframe):
+def process_dataframe(dataframe):
     df = dataframe.copy()
 
     # Ajustar nomes das colunas dentro da função
@@ -14,5 +15,11 @@ def adjust_columns_names(dataframe):
     )
     # remover dados nulos
     df = df.dropna()
+
+    # Caminho para salvar o arquivo CSV
+    output_path = 'data/processed/superstore_clean.csv'
+
+    # Salva o DataFrame no caminho desejado
+    df.to_csv(output_path, index=False)
 
     return df
