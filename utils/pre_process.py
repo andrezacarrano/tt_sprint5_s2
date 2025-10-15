@@ -12,5 +12,7 @@ def adjust_columns_names(dataframe):
         .str.strip()
         .str.replace(' ', '_')
     )
+    # remover dados nulos
+    df = df.dropna()
 
     return df
